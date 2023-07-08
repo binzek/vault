@@ -9,6 +9,7 @@ import { auth } from "../utils/auth";
 import { useAppSelector } from "../app/hooks";
 import { setIsUser, setUserName } from "../app/slices/userSlice";
 import { Profile } from ".";
+import classes from "../styles/Home.module.css";
 
 const Home: FC = () => {
   // New redux dispatch
@@ -34,12 +35,31 @@ const Home: FC = () => {
     return <Profile userName={userName} />;
   } else {
     return (
-      <div>
-        <h1>Welcome to :VauLT:</h1>
-        <Link to="/create">Create Account</Link>
-        <br />
-        <Link to="/login">Log In</Link>
-      </div>
+      <section className={`${classes.home} container`}>
+        <div className={`logo`}>
+          <img src="/src/assets/icon.svg" alt="VauLT Logo" />
+          <span>:VauLT:</span>
+        </div>
+        <div className={`${classes.home__text}`}>
+          <h1>
+            Elevate Your Data,
+            <br />
+            Securely and Efficiently
+          </h1>
+          <p>
+            Safely store, access, and manage your data with ease in Vault's
+            secure and efficient signup and login app.
+          </p>
+        </div>
+        <div className={`${classes.home__buttons}`}>
+          <Link to="/create" className="button button-primary">
+            Create Account
+          </Link>
+          <Link to="/login" className="button">
+            Log In
+          </Link>
+        </div>
+      </section>
     );
   }
 };

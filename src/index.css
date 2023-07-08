@@ -14,9 +14,18 @@
   --color-yellow: #f6c90e;
 
   /* Text size variables */
-  --text-big: 58px;
-  --text-heading: 40px;
-  --text-body: 20px;
+  --text-big: 2rem;
+  --text-heading: 1.6rem;
+  --text-body: 0.85rem;
+}
+
+/* Variables - Small laptop */
+@media (min-width: 1024px) {
+  :root {
+    --text-big: 3rem;
+    --text-heading: 2rem;
+    --text-body: 1rem;
+  }
 }
 
 /* Universal styles */
@@ -24,4 +33,78 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  min-height: 100svh;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: calc(var(--text-body) * 1.5);
+}
+
+/* General utility styles */
+.container {
+  width: 94%;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+  font-family: var(--font-heading);
+  font-size: var(--text-heading);
+  color: var(--color-yellow);
+}
+
+.logo img {
+  width: 42px;
+}
+
+.button {
+  padding: 8px 16px;
+  text-decoration: none;
+  color: var(--color-white);
+  border-radius: 8px;
+  font-weight: 600;
+  border: 2px solid #f6c90e;
+  flex: 1;
+  text-align: center;
+}
+
+.button:hover {
+  background-color: rgba(143, 168, 177, 0.1);
+}
+
+.button-primary {
+  background-color: var(--color-yellow);
+  color: var(--color-black);
+}
+
+.button-primary:hover {
+  background-color: rgba(246, 200, 14, 0.9);
+  border: 2px solid rgba(246, 200, 14, 0.9);
+}
+
+/* General utility styles - Tablet */
+@media (min-width: 768px) {
+  .container {
+    width: 70%;
+  }
+}
+
+/* General utility styles - Small laptop */
+@media (min-width: 1024px) {
+  .container {
+    width: 60%;
+  }
+}
+
+/* General utility styles - Laptop */
+@media (min-width: 1440px) {
+  .container {
+    width: 40%;
+  }
 }
