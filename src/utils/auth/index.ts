@@ -68,7 +68,7 @@ export const createAccount = async ({
 export const signIn = async ({ email, password }: signInParams) => {
   try {
     // Sign in user with email and password
-    console.log(await signInWithEmailAndPassword(auth, email, password));
+    await signInWithEmailAndPassword(auth, email, password);
   } catch (error: any) {
     // Alert error if there any
     alert(handleError(error.code));
