@@ -5,6 +5,8 @@ import {
   updateProfile,
   signInWithEmailAndPassword,
 } from "firebase/auth";
+
+// Local imports
 import { app } from "../../firebase";
 
 // Params for createAccount function
@@ -21,7 +23,7 @@ interface signInParams {
 }
 
 // Firebase auth functiom
-const auth = getAuth(app);
+export const auth = getAuth(app);
 
 // Authentication error handling function
 const handleError = (error: string) => {
@@ -58,6 +60,9 @@ export const createAccount = async ({
     updateProfile(response.user, {
       displayName: name,
     });
+
+    // Return user's data
+    return response.user;
   } catch (error: any) {
     // Alert error if there any
     alert(handleError(error.code));
@@ -68,7 +73,10 @@ export const createAccount = async ({
 export const signIn = async ({ email, password }: signInParams) => {
   try {
     // Sign in user with email and password
-    await signInWithEmailAndPassword(auth, email, password);
+    const response = await signInWithEmailAndPassword(auth, email, password);
+
+    // Return user's data
+    return response.user;
   } catch (error: any) {
     // Alert error if there any
     alert(handleError(error.code));
