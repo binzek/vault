@@ -2,6 +2,9 @@
 import { FC } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 
+// Local imports
+import { signIn } from "../utils/auth";
+
 // Form input fields' types
 interface FormInputs {
   email: string;
@@ -13,7 +16,10 @@ const LogIn: FC = () => {
   const { register, handleSubmit } = useForm<FormInputs>();
 
   // Submit handler function for input form
-  const onSubmit: SubmitHandler<FormInputs> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<FormInputs> = async (data) => {
+    // Signin with the given data on form submit
+    await signIn({ email: data.email, password: data.password });
+  };
 
   return (
     <div>
