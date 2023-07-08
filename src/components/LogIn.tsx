@@ -9,7 +9,10 @@ interface FormInputs {
 }
 
 const LogIn: FC = () => {
+  // Register react-hook-form
   const { register, handleSubmit } = useForm<FormInputs>();
+
+  // Submit handler function for input form
   const onSubmit: SubmitHandler<FormInputs> = (data) => console.log(data);
 
   return (
