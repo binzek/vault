@@ -3,5 +3,6 @@
 import Home from "./Home";
 import CreateAccount from "./CreateAccount";
 import LogIn from "./LogIn";
+import Profile from "./Profile";
 
-export { Home, CreateAccount, LogIn };
+export { Home, CreateAccount, LogIn, Profile };

@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { auth } from "../utils/auth";
 import { useAppSelector } from "../app/hooks";
 import { setIsUser, setUserName } from "../app/slices/userSlice";
+import { Profile } from ".";
 
 const Home: FC = () => {
   // New redux dispatch
@@ -29,15 +30,18 @@ const Home: FC = () => {
     }
   });
 
-  return (
-    <div>
-      <h1>Welcome to :VauLT:</h1>
-      {isUser && <h2>Hello, {userName}</h2>}
-      <Link to="/create">Create Account</Link>
-      <br />
-      <Link to="/login">Log In</Link>
-    </div>
-  );
+  if (isUser) {
+    return <Profile userName={userName} />;
+  } else {
+    return (
+      <div>
+        <h1>Welcome to :VauLT:</h1>
+        <Link to="/create">Create Account</Link>
+        <br />
+        <Link to="/login">Log In</Link>
+      </div>
+    );
+  }
 };
 
 export default Home;

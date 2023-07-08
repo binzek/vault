@@ -4,6 +4,7 @@ import {
   createUserWithEmailAndPassword,
   updateProfile,
   signInWithEmailAndPassword,
+  signOut as signOutProfile,
 } from "firebase/auth";
 
 // Local imports
@@ -37,6 +38,8 @@ const handleError = (error: string) => {
     return "User not found with the email address you provided";
   } else if (error.includes("wrong-password")) {
     return "Please check the password and try again";
+  } else if (error.includes("network")) {
+    return "Please check yout network and try again";
   } else {
     return error;
   }
@@ -79,6 +82,15 @@ export const signIn = async ({ email, password }: signInParams) => {
     return response.user;
   } catch (error: any) {
     // Alert error if there any
+    alert(handleError(error.code));
+  }
+};
+
+// Function to sign out
+export const signOut = async () => {
+  try {
+    signOutProfile(auth);
+  } catch (error: any) {
     alert(handleError(error.code));
   }
 };
