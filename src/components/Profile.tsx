@@ -3,7 +3,7 @@ import { FC } from "react";
 
 // Local imports
 import { signOut } from "../utils/auth";
-import classes from "../styles/Profile.module.css";
+import classes from "../styles/Hero.module.css";
 
 // Props for profile
 interface Props {
@@ -12,12 +12,12 @@ interface Props {
 
 const Profile: FC<Props> = ({ userName }) => {
   return (
-    <section className={`${classes.profile} container`}>
+    <section className={`${classes.hero} container`}>
       <div className={`logo`}>
         <img src="/src/assets/icon.svg" alt="VauLT Logo" />
         <span>:VauLT:</span>
       </div>
-      <div className={`${classes.profile__text}`}>
+      <div className={`${classes.hero__text}`}>
         <h1>Hello There, {userName}</h1>
         <p>
           A safe place to store, access, and manage {userName}'s data with ease.

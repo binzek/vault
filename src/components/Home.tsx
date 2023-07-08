@@ -9,7 +9,7 @@ import { auth } from "../utils/auth";
 import { useAppSelector } from "../app/hooks";
 import { setIsUser, setUserName } from "../app/slices/userSlice";
 import { Profile } from ".";
-import classes from "../styles/Home.module.css";
+import classes from "../styles/Hero.module.css";
 
 const Home: FC = () => {
   // New redux dispatch
@@ -35,12 +35,12 @@ const Home: FC = () => {
     return <Profile userName={userName} />;
   } else {
     return (
-      <section className={`${classes.home} container`}>
+      <section className={`${classes.hero} container`}>
         <div className={`logo`}>
           <img src="/src/assets/icon.svg" alt="VauLT Logo" />
           <span>:VauLT:</span>
         </div>
-        <div className={`${classes.home__text}`}>
+        <div className={`${classes.hero__text}`}>
           <h1>
             Elevate Your Data,
             <br />
@@ -51,7 +51,7 @@ const Home: FC = () => {
             secure and efficient signup and login app.
           </p>
         </div>
-        <div className={`${classes.home__buttons}`}>
+        <div className={`${classes.hero__buttons}`}>
           <Link to="/create" className="button button-primary">
             Create Account
           </Link>

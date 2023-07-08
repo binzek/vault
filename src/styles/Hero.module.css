@@ -1,4 +1,4 @@
-.profile {
+.hero {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6,17 +6,23 @@
   transform: translateY(50%);
 }
 
-.profile__text {
+.hero__text {
   display: flex;
   flex-direction: column;
   gap: 16px;
   text-align: center;
 }
 
-.profile__text h1 {
+.hero__text h1 {
   font-family: var(--font-heading);
   font-size: var(--text-big);
   line-height: calc(var(--text-big) * 1.1);
+}
+
+.hero__buttons {
+  display: flex;
+  width: 90%;
+  gap: 16px;
 }
 
 .signout__button {
@@ -32,4 +38,11 @@
 
 .signout__button:hover {
   background-color: #ff5555bb;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .hero__buttons {
+    width: 60%;
+  }
 }
