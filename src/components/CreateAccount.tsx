@@ -2,6 +2,9 @@
 import { FC } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 
+// Local imports
+import { createAccount } from "../utils/auth";
+
 // Form input fields' types
 interface FormInputs {
   name: string;
@@ -14,7 +17,14 @@ const CreateAccount: FC = () => {
   const { register, handleSubmit } = useForm<FormInputs>();
 
   // Submit handler function for input form
-  const onSubmit: SubmitHandler<FormInputs> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<FormInputs> = async (data) => {
+    // Create a new user on form submit
+    await createAccount({
+      name: data.name,
+      email: data.email,
+      password: data.password,
+    });
+  };
 
   return (
     <div>
