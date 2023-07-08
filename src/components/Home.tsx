@@ -37,8 +37,10 @@ const Home: FC = () => {
     return (
       <section className={`${classes.hero} container`}>
         <div className={`logo`}>
-          <img src="/src/assets/icon.svg" alt="VauLT Logo" />
-          <span>:VauLT:</span>
+          <Link to="/">
+            <img src="/src/assets/icon.svg" alt="VauLT Logo" />
+            <span>:VauLT:</span>
+          </Link>
         </div>
         <div className={`${classes.hero__text}`}>
           <h1>

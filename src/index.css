@@ -36,7 +36,6 @@
 }
 
 body {
-  min-height: 100svh;
   background-color: var(--color-black);
   color: var(--color-white);
   font-family: var(--font-body);
@@ -46,17 +45,19 @@ body {
 
 /* General utility styles */
 .container {
+  min-height: 100svh;
   width: 94%;
   margin: 0 auto;
 }
 
-.logo {
+.logo a {
   display: flex;
   gap: 16px;
   align-items: baseline;
   font-family: var(--font-heading);
   font-size: var(--text-heading);
   color: var(--color-yellow);
+  text-decoration: none;
 }
 
 .logo img {

@@ -1,5 +1,6 @@
 // Library imports
 import { FC } from "react";
+import { Link } from "react-router-dom";
 
 // Local imports
 import { signOut } from "../utils/auth";
@@ -14,8 +15,10 @@ const Profile: FC<Props> = ({ userName }) => {
   return (
     <section className={`${classes.hero} container`}>
       <div className={`logo`}>
-        <img src="/src/assets/icon.svg" alt="VauLT Logo" />
-        <span>:VauLT:</span>
+        <Link to="/">
+          <img src="/src/assets/icon.svg" alt="VauLT Logo" />
+          <span>:VauLT:</span>
+        </Link>
       </div>
       <div className={`${classes.hero__text}`}>
         <h1>Hello There, {userName}</h1>
