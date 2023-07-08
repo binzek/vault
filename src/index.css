@@ -1,3 +1,25 @@
+/* Fonts imports */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Signika+Negative:wght@700&display=swap");
+
+/* Variables */
+:root {
+  /* Font variables */
+  --font-heading: "Signika Negative", sans-serif;
+  --font-body: "Poppins", sans-serif;
+
+  /* Color variables */
+  --color-black: #303841;
+  --color-gray: #8fa8b1;
+  --color-white: #f7f7f7;
+  --color-yellow: #f6c90e;
+
+  /* Text size variables */
+  --text-big: 58px;
+  --text-heading: 40px;
+  --text-body: 20px;
+}
+
+/* Universal styles */
 * {
   margin: 0;
   padding: 0;
