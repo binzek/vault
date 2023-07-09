@@ -32,6 +32,7 @@ const CreateAccount: FC = () => {
       password: data.password,
     });
     navigate("/");
+    window.location.reload();
   };
 
   useEffect(() => {

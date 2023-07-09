@@ -61,6 +61,7 @@ const Form: FC<Props> = ({ title, nameField, bottomLink, onSubmit }) => {
             type="password"
             placeholder="********"
             required
+            minLength={8}
             {...register("password")}
           />
         </label>
