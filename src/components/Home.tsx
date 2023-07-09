@@ -8,7 +8,7 @@ import { useDispatch } from "react-redux";
 import { auth } from "../utils/auth";
 import { useAppSelector } from "../app/hooks";
 import { setIsUser, setUserName } from "../app/slices/userSlice";
-import { Profile } from ".";
+import { Profile, Logo } from "./";
 import classes from "../styles/Hero.module.css";
 
 const Home: FC = () => {
@@ -36,12 +36,7 @@ const Home: FC = () => {
   } else {
     return (
       <section className={`${classes.hero} container`}>
-        <div className={`logo`}>
-          <Link to="/">
-            <img src="/src/assets/icon.svg" alt="VauLT Logo" />
-            <span>:VauLT:</span>
-          </Link>
-        </div>
+        <Logo />
         <div className={`${classes.hero__text}`}>
           <h1>
             Elevate Your Data,

@@ -8,6 +8,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth, signIn } from "../utils/auth";
 import classes from "../styles/Form.module.css";
 import { useAppSelector } from "../app/hooks";
+import { Logo } from "./";
 
 // Form input fields' types
 interface FormInputs {
@@ -43,12 +44,7 @@ const LogIn: FC = () => {
   if (!isUser) {
     return (
       <div className={`${classes.form} container`}>
-        <div className={`logo`}>
-          <Link to="/">
-            <img src="/src/assets/icon.svg" alt="VauLT Logo" />
-            <span>:VauLT:</span>
-          </Link>
-        </div>
+        <Logo />
         <h1 className={`${classes.form__heading}`}>
           Log In To Existing Account
         </h1>

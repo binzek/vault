@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 // Local imports
 import { signOut } from "../utils/auth";
 import classes from "../styles/Hero.module.css";
+import { Logo } from "./";
 
 // Props for profile
 interface Props {
@@ -14,12 +15,7 @@ interface Props {
 const Profile: FC<Props> = ({ userName }) => {
   return (
     <section className={`${classes.hero} container`}>
-      <div className={`logo`}>
-        <Link to="/">
-          <img src="/src/assets/icon.svg" alt="VauLT Logo" />
-          <span>:VauLT:</span>
-        </Link>
-      </div>
+      <Logo />
       <div className={`${classes.hero__text}`}>
         <h1>Hello There, {userName}</h1>
         <p>
