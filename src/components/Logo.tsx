@@ -6,7 +6,7 @@ const Logo: FC = () => {
   return (
     <div className={`logo`}>
       <Link to="/">
-        <img src="/src/assets/icon.svg" alt="VauLT Logo" />
+        <img src="/icon.svg" alt="VauLT Logo" />
         <span>:VauLT:</span>
       </Link>
     </div>
