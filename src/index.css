@@ -109,3 +109,15 @@ body {
     width: 40%;
   }
 }
+
+.watermark {
+  text-decoration: none;
+  color: var(--color-gray);
+  position: fixed;
+  right: 4px;
+  bottom: 4px;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  font-size: 12px;
+  font-weight: 200;
+}
