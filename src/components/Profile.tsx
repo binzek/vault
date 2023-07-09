@@ -1,6 +1,5 @@
 // Library imports
 import { FC } from "react";
-import { Link } from "react-router-dom";
 
 // Local imports
 import { signOut } from "../utils/auth";
@@ -10,13 +9,15 @@ import { Logo } from "./";
 // Props for profile
 interface Props {
   userName: string;
+  userEmail: string;
 }
 
-const Profile: FC<Props> = ({ userName }) => {
+const Profile: FC<Props> = ({ userName, userEmail }) => {
   return (
     <section className={`${classes.hero} container`}>
       <Logo />
       <div className={`${classes.hero__text}`}>
+        <span>{userEmail}</span>
         <h1>Hello There, {userName}</h1>
         <p>
           A safe place to store, access, and manage {userName}'s data with ease.

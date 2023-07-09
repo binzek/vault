@@ -19,6 +19,10 @@
   line-height: calc(var(--text-big) * 1.1);
 }
 
+.hero__text span {
+  color: var(--color-gray);
+}
+
 .hero__buttons {
   display: flex;
   width: 90%;

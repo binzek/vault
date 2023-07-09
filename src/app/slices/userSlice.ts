@@ -5,12 +5,14 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 interface InitialStateType {
   isUser: boolean;
   userName: string;
+  userEmail: string;
 }
 
 // Initial state
 const initialState: InitialStateType = {
   isUser: false,
   userName: "",
+  userEmail: "",
 };
 
 // Create slice
@@ -27,11 +29,16 @@ export const userSlice = createSlice({
     setUserName: (state, action: PayloadAction<string>) => {
       state.userName = action.payload;
     },
+
+    // Function to set user's displayName
+    setUserEmail: (state, action: PayloadAction<string>) => {
+      state.userEmail = action.payload;
+    },
   },
 });
 
 // Export slice actions
-export const { setIsUser, setUserName } = userSlice.actions;
+export const { setIsUser, setUserName, setUserEmail } = userSlice.actions;
 
 // Export slice reducer as default
 export default userSlice.reducer;

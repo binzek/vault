@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 // Local imports
 import { auth } from "../utils/auth";
 import { useAppSelector } from "../app/hooks";
-import { setIsUser, setUserName } from "../app/slices/userSlice";
+import { setIsUser, setUserName, setUserEmail } from "../app/slices/userSlice";
 import { Profile, Logo } from "./";
 import classes from "../styles/Hero.module.css";
 
@@ -16,7 +16,7 @@ const Home: FC = () => {
   const dispatch = useDispatch();
 
   // Get user's current states
-  const { isUser, userName } = useAppSelector((state) => state.user);
+  const { isUser, userName, userEmail } = useAppSelector((state) => state.user);
 
   // Execute when user status changes
   // Eg: when sign in and when sign out
@@ -25,14 +25,16 @@ const Home: FC = () => {
     if (user) {
       dispatch(setIsUser(true));
       dispatch(setUserName(user.displayName || ""));
+      dispatch(setUserEmail(user.email || ""));
     } else {
       dispatch(setIsUser(false));
       dispatch(setUserName(""));
+      dispatch(setUserEmail(""));
     }
   });
 
   if (isUser) {
-    return <Profile userName={userName} />;
+    return <Profile userName={userName} userEmail={userEmail} />;
   } else {
     return (
       <section className={`${classes.hero} container`}>
