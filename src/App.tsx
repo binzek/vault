@@ -13,8 +13,8 @@ const App: FC = () => {
         <Route path="/create" element={<CreateAccount />} />
         <Route path="/login" element={<LogIn />} />
       </Routes>
-      <a href="https://wajid.me/" target="_blank" className="watermark">
-        &copy; 2023 - Abdul Wajid
+      <a href="https://www.binzek.com/" target="_blank" className="watermark">
+        &copy; 2025 - Abdul Wajid
       </a>
     </>
   );
