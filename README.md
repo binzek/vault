@@ -2,7 +2,7 @@
 
 VauLT is a demo application that has the functionalities of user registration and sign in that is built on React
 
-**Live App: https://vault.wajid.me/**
+**Live App: https://vault.live.binzek.com/**
 
 ## Features
 
@@ -70,4 +70,4 @@ Follow these steps to set up :VauLT: locally on your machine:
 
 ## License
 
-Distributed under the [MIT License](https://opensource.org/license/mit/). See [`LICENSE`](https://github.com/wajid-nv/vault/blob/main/LICENSE) for more information.
+Distributed under the [MIT License](https://opensource.org/license/mit/). See [`LICENSE`](/LICENSE) for more information.
